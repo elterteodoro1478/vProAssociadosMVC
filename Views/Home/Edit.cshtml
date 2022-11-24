@@ -1,0 +1,334 @@
+﻿@model vProAssociados.Models.Associado
+
+@{
+    ViewBag.Title = "Editar associado";
+}
+
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Editar - Associado Proauto </title>
+
+    @*<link href="/Content/bootstrap.css" rel="stylesheet" />
+        <link href="/Content/site.css" rel="stylesheet" />
+        <script src="/Scripts/modernizr-2.8.3.js"></script>
+        <script src="/Scripts/jquery-3.4.1.js"></script>
+        <script src="/Scripts/bootstrap.js"></script>*@
+
+
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/scripts/jquery-3.4.1.js"></script>
+    <script src="~/scripts/bootstrap.min.js"></script>
+    <script src="~/scripts/jquery.mask.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+</head>
+
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+
+        <br />
+        <p style="color: white; font-size: 16px; text-align :center">  Proauto</p>
+
+        <div class="container">
+
+
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" title="mais opções">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <br />
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+
+
+        <form action="" method="post" name="formEditarAssociado" id="formEditarAssociado">
+            <input name="__RequestVerificationToken" type="hidden" value="TDeFgnLVm-TZy2Za1ptoL1UsqPGb5lWbO75B8Ac5AvaYJE6wQT37r59905YRjBvNDfwwXffeCm92kUmtyu3MoFQ79rSuU07ZbLmByC9CSX81" />    
+                <div class="form-horizontal">
+
+
+                <input data-val="true" data-val-number="O campo Id deve ser um número." data-val-required="O campo Id é obrigatório." id="Id" name="Id" type="hidden" value="6" />
+
+
+                <div class="form-group">
+                    <br /> <h2>Edição:</h2><br />
+                </div>
+
+
+                <div class="form-group">
+                    <label class="control-label col-md-2" for="Nome">Nome</label>
+                    <div class="col-md-10">
+                        <input class="form-control text-box single-line" disabled="disabled" id="Nome" name="Nome" type="text" value="@Model.Nome" />
+                        <span class="field-validation-valid text-danger" data-valmsg-for="Nome" data-valmsg-replace="true"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-md-2" for="CPF">CPF</label>
+                    <div class="col-md-10">
+                        <input class="form-control text-box single-line" disabled="disabled" id="CPF" name="CPF" type="text" value="@Model.CPF" />
+                        <span class="field-validation-valid text-danger" data-valmsg-for="CPF" data-valmsg-replace="true"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-md-2" for="Placa">Placa</label>
+                    <div class="col-md-10">
+                        <input class="form-control text-box single-line" disabled="disabled" id="Placa" name="Placa" type="text" value="@Model.Placa" />
+                        <span class="field-validation-valid text-danger" data-valmsg-for="Placa" data-valmsg-replace="true"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-md-2" for="TelefoneFixo">Telefone Fixo</label>
+                    <div class="col-md-10">
+                        <input class="form-control text-box single-line" disabled="disabled" id="TelefoneFixo" name="TelefoneFixo" type="text" value="@Model.TelefoneFixo" />
+                        <span class="field-validation-valid text-danger" data-valmsg-for="TelefoneFixo" data-valmsg-replace="true"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-md-2" for="TelefoneCeluar">Telefone celuar</label>
+                    <div class="col-md-10">
+                        <input class="form-control text-box single-line" disabled="disabled" id="TelefoneCeluar" name="TelefoneCeluar" type="text" value="@Model.TelefoneCeluar" />
+                        <span class="field-validation-valid text-danger" data-valmsg-for="TelefoneCeluar" data-valmsg-replace="true"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-md-2" for="CEP">CEP</label>
+                    <div class="col-md-10">
+                        <input class="form-control text-box single-line" id="CEP" name="CEP" type="text" value="@Model.CEP" />
+                        <span class="field-validation-valid text-danger" data-valmsg-for="CEP" data-valmsg-replace="true"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-md-2" for="Logradouro">Logradouro</label>
+                    <div class="col-md-10">
+                        <input class="form-control text-box single-line" id="Logradouro" name="Logradouro" type="text" value="@Model.Logradouro" />
+                        <span class="field-validation-valid text-danger" data-valmsg-for="Logradouro" data-valmsg-replace="true"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-md-2" for="Numero">Numero</label>
+                    <div class="col-md-10">
+                        <input class="form-control text-box single-line" id="Numero" name="Numero" type="text" value="@Model.Numero" />
+                        <span class="field-validation-valid text-danger" data-valmsg-for="Numero" data-valmsg-replace="true"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-md-2" for="Complemento">Complemento</label>
+                    <div class="col-md-10">
+                        <input class="form-control text-box single-line" id="Complemento" name="Complemento" type="text" value="@Model.Complemento" />
+                        <span class="field-validation-valid text-danger" data-valmsg-for="Complemento" data-valmsg-replace="true"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-md-2" for="Bairro">Bairro</label>
+                    <div class="col-md-10">
+                        <input class="form-control text-box single-line" id="Bairro" name="Bairro" type="text" value="@Model.Bairro" />
+                        <span class="field-validation-valid text-danger" data-valmsg-for="Bairro" data-valmsg-replace="true"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-md-2" for="Cidade">Cidade</label>
+                    <div class="col-md-10">
+                        <input class="form-control text-box single-line" id="Cidade" name="Cidade" type="text" value="@Model.Cidade" />
+                        <span class="field-validation-valid text-danger" data-valmsg-for="Cidade" data-valmsg-replace="true"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-md-2" for="UF">UF</label>
+                    <div class="col-md-10">
+                        
+                        <select style="width:100%" class="form-control" name="UF" id="UF">
+                            <option value="" selected> </option>
+                            <option value="AC">AC</option>
+                            <option value="AL">AL</option>
+                            <option value="AM">AM</option>
+                            <option value="AP">AP</option>
+                            <option value="AM">AM</option>
+                            <option value="BA">BA</option>
+                            <option value="CE">CE</option>
+                            <option value="ES">ES</option>
+                            <option value="DF">DF</option>
+                            <option value="GO">GO</option>
+                            <option value="MA">MA</option>
+                            <option value="MG">MG</option>
+                            <option value="MS">MS</option>
+                            <option value="MT">MT</option>
+                            <option value="PA">PA</option>
+                            <option value="PB">PB</option>
+                            <option value="PE">PE</option>
+                            <option value="PI">PI</option>
+                            <option value="PR">PR</option>
+                            <option value="RJ">RJ</option>
+                            <option value="RN">RN</option>
+                            <option value="RO">RO</option>
+                            <option value="RR">RR</option>
+                            <option value="RS">RS</option>
+                            <option value="SC">SC</option>
+                            <option value="SE">SE</option>
+                            <option value="SP">SP</option>
+                            <option value="TO">TO</option>
+                        </select>
+                        
+                        <span class="field-validation-valid text-danger" data-valmsg-for="UF" data-valmsg-replace="true"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        @*<input type="button" value="Salvar" onclick="Salvar()" class="btn btn-default" />*@
+
+
+                        <input type="button" value="Salvar" onclick="SalvarDados()"
+                               class="btn primary btn-lg" />
+                    </div>
+                </div>
+            </div>
+        </form>
+
+
+        <hr />
+        <footer>
+        </footer>
+    </div>
+
+
+
+</body>
+</html>
+
+
+<script>
+
+    $(function () {
+        //
+        $("#UF").val('@Model.UF');
+
+
+
+
+        function limpa_formulário_cep() {
+            // Limpa valores do formulário de cep.
+            $("#Logradouro").val("");
+            $("#Bairro").val("");
+            $("#cidade").val("");
+            $("#UF").val("");
+        }
+
+        //Quando o campo cep perde o foco.
+        $("#CEP").blur(function () {
+
+            //Nova variável "cep" somente com dígitos.
+            var cep = $(this).val().replace(/\D/g, '');
+
+            //Verifica se campo cep possui valor informado.
+            if (cep != "") {
+
+                //Expressão regular para validar o CEP.
+                var validacep = /^[0-9]{8}$/;
+
+                //Valida o formato do CEP.
+                if (validacep.test(cep)) {
+
+                    //Preenche os campos com "..." enquanto consulta webservice.
+                    $("#Logradouro").val("...");
+                    $("#Bairro").val("...");
+                    $("#Cidade").val("...");
+                    $("#UF").val("...");
+
+
+                    //Consulta o webservice viacep.com.br/
+                    $.getJSON("https://viacep.com.br/ws/" + cep + "/json/?callback=?", function (dados) {
+
+                        if (!("erro" in dados)) {
+                            //Atualiza os campos com os valores da consulta.
+                            $("#Logradouro").val(dados.logradouro);
+                            $("#Bairro").val(dados.bairro);
+                            $("#Cidade").val(dados.localidade);
+                            $("#UF").val(dados.uf);
+
+                        } //end if.
+                        else {
+                            //CEP pesquisado não foi encontrado.
+                            limpa_formulário_cep();
+                            alert("CEP não encontrado.");
+                        }
+                    });
+                } //end if.
+                else {
+                    //cep é inválido.
+                    limpa_formulário_cep();
+                    alert("Formato de CEP inválido.");
+                }
+            } //end if.
+            else {
+                //cep sem valor, limpa formulário.
+                limpa_formulário_cep();
+            }
+        });
+    })
+
+
+
+
+
+    function SalvarDados()
+    {
+            if ($("#CPF").val() == "") {
+                alert("É necessário informar o CPF!");
+            }
+            else if ($("#Placa").val() == "")
+            {
+                alert("É necessário informar a Placa!");
+            }
+            else
+            {
+                $.ajax({
+                    url: "/Home/SalvarDados",
+                    async: false,
+                    type: "post",
+                    dataType: "json",
+                    data: $("#formEditarAssociado").serialize(),
+                    cache: false,
+                    success: function (result) {
+                        if (result.Erro) {
+                            //alert(result.erro)
+                            Swal.fire(result.Erro);
+                        }
+                        else {
+                            /*if (result.UsuarioMaster == "SIM")*/
+
+                            Swal.fire("Informaçãoes salvas com sucsso!");
+                            window.location = "/Home/Details/" + '@Model.Id';
+                            //else
+                            //    window.location = "/Associados/Details";
+                        }
+
+                    }
+                });
+            }
+        }
+
+</script>
